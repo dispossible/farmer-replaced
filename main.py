@@ -1,7 +1,7 @@
-from bot_stripfarm import stripfarm
-from bot_zones import zones
+import bot_stripfarm
+import bot_zones
 
 clear()
 
-# stripfarm()
-zones()
+# bot_stripfarm.bot()
+bot_zones.bot()
