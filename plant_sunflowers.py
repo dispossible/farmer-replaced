@@ -1,6 +1,6 @@
 import util_move
 import util_plant
-import util_sort
+import util_list
 
 def plant_sunflowers(x, y, x_size, y_size):
     change_hat(Hats.Sunflower_Hat)
@@ -37,7 +37,7 @@ def plant_sunflowers_sort(x, y, x_size, y_size):
 
     def sort(a, b):
         return a[0] >= b[0]
-    util_sort.sort_list(flowers, sort)
+    util_list.sort_list(flowers, sort)
 
     while len(flowers) >= 10:
         flower = flowers.pop()

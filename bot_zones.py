@@ -6,6 +6,7 @@ from plant_pumpkin import plant_pumpkin
 from plant_sunflowers import plant_sunflowers, plant_sunflowers_sort
 from plant_trees import plant_trees
 from plant_cacti import plant_cacti
+from plant_maze import plant_maze
 
 def bot():
     while True:
@@ -14,6 +15,9 @@ def bot():
 
 
         plant_cacti(12, 0, 4, 8)
+
+        
+        plant_pumpkin(16, 0, 6)
 
 
         def plant_carrot(x, y):
@@ -25,6 +29,8 @@ def bot():
 
 
         plant_trees(0, 4, 4, 8, Entities.Bush)
+
+        plant_trees(16, 6, 6, 8, Entities.Bush)
 
 
         plant_pumpkin(4, 4, 8)
