@@ -2,7 +2,7 @@ import util_move
 import util_plant
 import util_list
 
-def plant_sunflowers(x, y, x_size, y_size):
+def plant_sunflowers_force(x, y, x_size, y_size):
     change_hat(Hats.Sunflower_Hat)
 
     def check_sunflowers(x, y):

@@ -1,8 +1,10 @@
 import util_upgrade
 
-from plant_maze import plant_maze, solve_maze
+from plant_maze import plant_maze
 
 def bot():
+    clear()
+    
     while True:
         util_upgrade.buy_upgrades()
 
