@@ -8,7 +8,7 @@ needs_soil = {
     Entities.Cactus: True,
 }
 
-def do_planting(crop, do_harvest = False, apply_treatment = True):
+def do_planting(crop, do_harvest = False, fertilize = False):
     if get_entity_type() != crop:
         harvest()
 
@@ -23,8 +23,17 @@ def do_planting(crop, do_harvest = False, apply_treatment = True):
             till()
 
     if crop != Entities.Grass:
-        plant(crop)
+        costs = get_cost(crop)
+        can_afford = True
+        if costs:
+            for needed_item in costs:
+                owned = num_items(needed_item)
+                if owned < costs[needed_item]:
+                    can_afford = False
+        if can_afford:
+            plant(crop)
     
-    if apply_treatment:
-        util_water.do_watering()
-        # util_fertilize.do_fertilize()
+    util_water.do_watering()
+
+    if fertilize:
+        util_fertilize.do_fertilize()

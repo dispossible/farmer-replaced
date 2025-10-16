@@ -1,5 +1,3 @@
 def do_fertilize():
-    cures = num_items(Items.Weird_Substance)
-
-    if cures < 1:
-        return
+    if num_items(Items.Fertilizer) > 0:
+        use_item(Items.Fertilizer)
