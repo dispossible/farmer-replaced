@@ -1,5 +1,5 @@
 def do_watering():
-    if num_items(Items.Water) <= 0:
+    if num_items(Items.Water) <= num_drones():
         return
 
     water_level = get_water()
