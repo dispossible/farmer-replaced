@@ -2,8 +2,10 @@ def move_times(dir, times):
     for x in range(times):
         move(dir)
 
+def noop(x, y):
+    pass
 
-def move_to(x, y):
+def move_to(x, y, cb = noop):
     world_size = get_world_size()
 
     # Get current position
@@ -28,13 +30,44 @@ def move_to(x, y):
     # Move horizontally
     while get_pos_x() != x:
         move(direction_x)
+        cb(None, None)
 
     # Move vertically
     while get_pos_y() != y:
         move(direction_y)
+        cb(None, None)
 
 
-def move_zig_zag(x_size, y_size, x_dir, y_dir, cb):
+def move_to_nowrap(x, y, cb = noop):
+    # Get current position
+    current_x = get_pos_x()
+    current_y = get_pos_y()
+
+    # Calculate distance to target
+    distance_x = (x - current_x)
+    distance_y = (y - current_y)
+
+    # Determine directions
+    direction_x = East 
+    if distance_x < 0:
+        direction_x = West
+
+    direction_y = North
+    if distance_y < 0:
+        direction_y = South
+
+    # Move horizontally
+    while get_pos_x() != x:
+        move(direction_x)
+        cb(None, None)
+
+    # Move vertically
+    while get_pos_y() != y:
+        move(direction_y)
+        cb(None, None)
+
+
+def move_zig_zag(x_size, y_size, x_dir, y_dir, cb = noop):
     for x in range(x_size):
         for y in range(y_size):
             cb(x, y)
@@ -67,7 +100,7 @@ def distance_to(x, y):
     return min(distance_east, distance_west) + min(distance_north, distance_south)
 
 
-def move_to_and_zig_zag(x, y, x_size, y_size, cb):
+def move_to_and_zig_zag(x, y, x_size, y_size, cb = noop):
     w = x
     e = x + x_size - 1
     s = y

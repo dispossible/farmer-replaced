@@ -27,7 +27,7 @@ def bot():
 
     def drone_func_4():
         plant_pumpkin(0, 6, 6)
-    util_spawn_drone.create_drone(drone_func_4, None, Hats.Gray_Hat)
+    util_spawn_drone.create_drone(drone_func_4, None, Hats.Gold_Hat)
 
     def drone_func_5():
         plant_sunflowers_sort(6, 6, 6, 6)
@@ -38,12 +38,12 @@ def bot():
     util_spawn_drone.create_drone(drone_func_6, None, Hats.Cactus_Hat)
 
     def drone_func_7():
-        plant_maze(0, 12, 12)
+        plant_maze(0, 18, 12)
     util_spawn_drone.create_drone(drone_func_7, None, Hats.Traffic_Cone)
 
     def drone_func_8():
         plant_pumpkin(12, 12, 6)
-    util_spawn_drone.create_drone(drone_func_8, None, Hats.Gray_Hat)
+    util_spawn_drone.create_drone(drone_func_8, None, Hats.Gold_Hat)
 
     def drone_func_9():
         plant_cacti(18, 12, 6, 6)
@@ -61,6 +61,46 @@ def bot():
         plant_carrot(12, 18, 6, 6)
     util_spawn_drone.create_drone(drone_func_12, None, Hats.Carrot_Hat)
 
+    def drone_func_13():
+        plant_trees(18, 18, 6, 6, Entities.Bush)
+    util_spawn_drone.create_drone(drone_func_13, None, Hats.Tree_Hat)
+
+    def drone_func_14():
+        plant_carrot(24, 0, 6, 6)
+    util_spawn_drone.create_drone(drone_func_14, None, Hats.Carrot_Hat)
+
+    def drone_func_15():
+        plant_sunflowers_sort(24, 6, 6, 6)
+    util_spawn_drone.create_drone(drone_func_15, None, Hats.Sunflower_Hat)
+
+    def drone_func_16():
+        plant_pumpkin(24, 12, 6)
+    util_spawn_drone.create_drone(drone_func_16, None, Hats.Gold_Hat)
+
+    def drone_func_17():
+        plant_cacti(24, 18, 6, 6)
+    util_spawn_drone.create_drone(drone_func_17, None, Hats.Cactus_Hat)
+
+    def drone_func_18():
+        plant_grass(24, 24, 6, 6, False)
+    util_spawn_drone.create_drone(drone_func_18, None, Hats.Straw_Hat)
+
+    def drone_func_19():
+        plant_carrot(18, 24, 6, 6)
+    util_spawn_drone.create_drone(drone_func_19, None, Hats.Carrot_Hat)
+    
+    def drone_func_20():
+        plant_carrot(6, 12, 6, 6)
+    util_spawn_drone.create_drone(drone_func_20, None, Hats.Carrot_Hat)
+
+    def drone_func_21():
+        plant_grass(12, 24, 6, 6, True)
+    util_spawn_drone.create_drone(drone_func_21, None, Hats.Straw_Hat)
+
+    def drone_func_22():
+        plant_cacti(0, 12, 6, 6)
+    util_spawn_drone.create_drone(drone_func_22, None, Hats.Cactus_Hat)
+    
     while True:
         util_upgrade.buy_upgrades()
 
