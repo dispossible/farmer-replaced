@@ -16,3 +16,24 @@ def plant_pumpkin(x, y, size):
     if pumpkin_ready[pumpkin_id]:
         harvest()
         plant_pumpkin(x, y, size)
+
+
+def plant_pumpkin_focus(x, y, size):
+    queue = []
+    for qx in range(size):
+        for qy in range(size):
+            if qx % 2 == 0:
+                queue.append((qx, qy))
+            else:
+                queue.append((qx, size - qy - 1))
+
+    while len(queue) > 0:
+        next_queue = []
+        for pos in queue:
+            util_move.move_to(x + pos[0], y + pos[1])
+            util_plant.do_planting(Entities.Pumpkin)
+            if not can_harvest():
+                next_queue.append(pos)
+        queue = next_queue
+
+    harvest()

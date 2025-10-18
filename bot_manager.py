@@ -5,13 +5,13 @@ from plant_grass import plant_grass
 from plant_trees import plant_trees
 from plant_carrot import plant_carrot
 from plant_pumpkin import plant_pumpkin
-from plant_sunflowers import plant_sunflowers_sort
+from plant_sunflowers import plant_sunflowers_force
 from plant_cacti import plant_cacti
 from plant_maze import plant_maze
 
 
 def bot():
-    change_hat(Hats.Wizard_Hat)
+    change_hat(Hats.The_Farmers_Remains)
     
     def drone_func_0():
         plant_grass(0, 0, 6, 6, True)
@@ -30,7 +30,7 @@ def bot():
     util_spawn_drone.create_drone(drone_func_4, None, Hats.Gold_Hat)
 
     def drone_func_5():
-        plant_sunflowers_sort(6, 6, 6, 6)
+        plant_sunflowers_force(6, 6, 6, 6)
     util_spawn_drone.create_drone(drone_func_5, None, Hats.Sunflower_Hat)
 
     def drone_func_6():
@@ -70,7 +70,7 @@ def bot():
     util_spawn_drone.create_drone(drone_func_14, None, Hats.Carrot_Hat)
 
     def drone_func_15():
-        plant_sunflowers_sort(24, 6, 6, 6)
+        plant_sunflowers_force(24, 6, 6, 6)
     util_spawn_drone.create_drone(drone_func_15, None, Hats.Sunflower_Hat)
 
     def drone_func_16():
@@ -100,9 +100,18 @@ def bot():
     def drone_func_22():
         plant_cacti(0, 12, 6, 6)
     util_spawn_drone.create_drone(drone_func_22, None, Hats.Cactus_Hat)
+
+    def drone_func_23():
+        plant_sunflowers_force(0, 30, 32, 2)
+    util_spawn_drone.create_drone(drone_func_23, None, Hats.Sunflower_Hat)
+
+    def drone_func_24():
+        plant_sunflowers_force(30, 0, 2, 30)
+    util_spawn_drone.create_drone(drone_func_24, None, Hats.Sunflower_Hat)
     
     while True:
         util_upgrade.buy_upgrades()
+        do_a_flip()
 
 
     
