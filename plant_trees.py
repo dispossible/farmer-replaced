@@ -13,3 +13,10 @@ def plant_trees(x, y, x_size, y_size, alt_crop):
             util_plant.do_planting(alt_crop, True)
 
     util_move.move_to_and_zig_zag(x, y, x_size, y_size, plant_tree)
+
+
+def plant_bushes(x, y, x_size, y_size):
+    def plant_bush(x, y):
+        util_plant.do_planting(Entities.Bush, True)
+
+    util_move.move_to_and_zig_zag(x, y, x_size, y_size, plant_bush)
